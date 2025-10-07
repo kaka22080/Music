@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&family=Gupter:wght@400;500;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Gupter", serif;
+}
+header{
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 200px;
+    transition: 0.5s ease;
+}
+header .brand{
+    color: #b6000b;
+    font-size: 1.3em;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: "Gupter", serif;
+}
+header .navigation{
+    position: relative;
+}
+header .navigation .navigation-items a{
+    position: relative;
+    color: #b6000b;
+    font-size: 1.3em;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 30px;
+    transition: 0.3s ease;
+}
+header .navigation .navigation-items a:before{
+    content: "";
+    position: absolute;
+    background: #b6000b;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
+}
+header .navigation .navigation-items a:hover:before{
+    width: 100%;
+}
+section{
+    padding: 100px 100px;
+}
+.home{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #750008;
+}
+.home:before{
+    z-index: 777;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.home .content{
+    z-index: 888;
+    color: #ff1525;
+    width: 70%;
+    margin-top: 5px;
+}
+
+.home .content h1{
+    font-size: 1.2em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 65px;
+    margin-bottom: 5px;
+}
+.home .content h1 span{
+    font-size: 1em;
+    font-weight: 500;
+}
+.home .content p{
+    margin-bottom: 40px;
+    font-size: 40px;
+}
+.home .content a{
+    background: #b6000b;
+    padding: 15px 35px;
+    color: #5f0007;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 2px;
+}
+.home .media-icons{
+    z-index: 888;
+    position: absolute;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease;
+}
+.home .media-icons a{
+    color: #fff;
+    font-size: 1.6em;
+    transition: 0.3s ease;
+}
+.home .media-icons a:not(:last-child){
+    margin-bottom: 20px;
+}
+.home .media-icons a:hover{
+    transform: scale(1.3);
+    color: #0ef;
+}
+.home video{
+    z-index: 000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+.slide-navigation{
+    z-index: 888;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(80px);
+    margin-bottom:-30px;
+}
+.slide-navigation .nav-btn{
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    transition: 0.3s ease;
+}
+.slide-navigation .nav-btn.active{
+    background: #2696e9;
+}
+.slide-navigation .nav-btn:not(:last-child){
+    margin-right: 20px;
+}
+.slide-navigation .nav-btn:hover{
+    transform: scale(1.2);
+}
+.video-slide{
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+.video-slide.active{
+    clip-path: circle(150% at 0 50%);
+    transition: 2s ease;
+    transition-property: clip-path;
+}
+@media (max-width:1040px){
+    header{
+    padding: 12px 20px;
+    }
+    section{
+        padding: 100px 20px;
+    }
+    .home .media-icons{
+        right: 15px;
+    }
+    header .navigation{
+        display: none;
+    }
+    header .navigation{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(1, 1, 1, 0.5);
+    }
+    header .navigation.active{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(1, 1, 1, 0.5);
+    }
+    header .navigation .navigation-items a{
+        color: #222;
+        font-size: 1.2em;
+        margin: 20px;
+    }
+    header .navigation .navigation-items a:before{
+        background: #222;
+        height: 5px;
+    }
+    header .navigation.active .navigation-items{
+        background: #fff;
+        width: 600px;
+        max-width: 600px;
+        margin: 20px;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 5px;
+        box-shadow: 0 5px 25px rgb(1 1 1 /20%);
+    }
+    .menu-btn{
+        background: url(img/menu.png)no-repeat;
+        background-size:30px ;
+        background-position: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+    .menu-btn.actove{
+        z-index: 999;
+        background: url(img/Close.png)no-repeat;
+        background-size: 25px;
+        background-position: center;
+        transition: 0.3s ease;
+    }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Parkinsans:wght@300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Squada+One&display=swap");
+
+body{
+    background-color: #ddd;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.container{
+    position: relative;
+    padding: 10px;
+}
+.container .song-info{
+    background-color: #000;
+    margin: 0 15px;
+    padding: 15px 15px 5px 150px;
+    border-radius: 15px 15px 0 0 ;
+}
+.container .song-info .song-name{
+    color: #dd1818;
+    font-size: 14px;
+    margin: 3px 0 20px;
+}
+.container .song-info .artist-name{
+    color: #c91717;
+    font-weight: bold;
+    font-size: 18px;
+}
+.container .song-info .progress-bar{
+    background-color: #505050;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.container .song-info .progress-bar .fill-bar{
+    width: 0;
+    height: 6px;
+    border-radius: 20px;
+    background: #c91111;
+}   
+.container .song-info .time{
+    font-size: 15px;
+    color: #b9b9b9;
+    margin: 10px 0 ;
+}
+.container .disk{
+    max-height: 120px;
+}
+.container .disk .cover{
+    width: 145px;
+    height: 145px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: url(img/coraçao.webp);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+    border: 3px solid #ff0000;
+    border-radius: 10%;
+    box-shadow:  0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+}
+.container .disk .circle{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 15%;
+    top: 29%;
+    background-color: #fff;
+    z-index: 1;
+    border-radius: 50%;
+}
+.container .controls{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #740000;
+    width: 450px;
+    height: 100px;
+    width: 450px;
+    height: 100px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow:  0 10px 30px rgba(0, 0, 0, 0.6);
+}
+.container .controls #play{
+    background-color: #000000;
+    color: #790909;
+    padding: 15px 20px 15px 20px;
+    font-size: 28px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+.container .controls #play:hover{
+    background-color: #5c5c5c;
+}
+.container .controls i{
+    padding: 30px 8px;
+    font-size: 35px;
+    cursor: pointer;
+    color: #000000;
+    transition:  all 0.3s ease;
+}
+.container .controls i:hover{
+    color: #646464;
+}
+@keyframes rotate{
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
